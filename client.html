@@ -1,0 +1,14 @@
+<script src="socket.io.js"></script>
+<script>
+    // $(document).ready(function(){
+     // sending a connect request to the server.
+     var socket = io.connect('http://localhost:8848');
+     socket.on('connect', function() {
+         socket.emit('my event', {data: 'I\'m connected!'});
+         console.log('Connected')
+     });
+     socket.on('message', function(msg) {
+         console.log(msg);
+     });
+    // });
+</script>
